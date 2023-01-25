@@ -1,0 +1,21 @@
+ nmap -T4 -A -p- 217.21.95.26
+
+nmap -T4 -p- 217.21.95.26
+
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+443/tcp  open  https
+3306/tcp open  mysql
+7443/tcp open  oracleas-https
+
+nmap -T4 -p21 80 443 3306 7443 217.21.95.26 -oA output  (-oA will save the results in a file named output)
+
+
+nmap -sU -T4 217.21.95.26 (-sU for UDP scan)
+
+ls /usr/share/nmap/scripts
+
+
+nmap -p 443 --script=all 217.21.95.26
+nmap -p 443 --script=ssl-enum-ciphers 217.21.95.26
